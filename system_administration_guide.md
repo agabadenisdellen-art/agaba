@@ -238,14 +238,6 @@ The three pillars of backup architecture are:
 2.  **Backup media:** The media that is used to store backups, such as tape, disk, or cloud.
 3.  **Backup server:** The server that is used to store and manage backups.
 
-```
-+-----------------+   +-----------------+   +-----------------+
-|                 |   |                 |   |                 |
-| Backup Software |-->|  Backup Server  |-->|  Backup Media   |
-|                 |   |                 |   |                 |
-+-----------------+   +-----------------+   +-----------------+
-```
-
 ### c) Types of Backups
 
 *   **Full backup:** A complete copy of all the data on a system.

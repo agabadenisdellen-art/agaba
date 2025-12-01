@@ -192,15 +192,15 @@ Rust was created by Graydon Hoare at Mozilla Research in 2006. It was designed t
 
 ## References
 
-Mozilla. (n.d.). *JavaScript*. MDN Web Docs. Retrieved November 21, 2024, from https://developer.mozilla.org/en-US/docs/Web/JavaScript
+Mozilla. (n.d.). *JavaScript*. MDN Web Docs. Retrieved November 30, 2023, from https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 Netflix Technology Blog. (2017, January 26). *Netflix Likes React*. Netflix TechBlog. https://netflixtechblog.com/netflix-likes-react-509675973a0b
 
-Oracle. (n.d.). *The History of Java Technology*. Oracle. Retrieved November 21, 2024, from https://www.oracle.com/java/technologies/history-of-java.html
+Oracle. (n.d.). *The History of Java Technology*. Oracle. Retrieved November 30, 2023, from https://www.oracle.com/java/technologies/history-of-java.html
 
-Python Software Foundation. (n.d.). *History of Python*. Python.org. Retrieved November 21, 2024, from https://www.python.org/doc/essays/history/
+Python Software Foundation. (n.d.). *History of Python*. Python.org. Retrieved November 30, 2023, from https://www.python.org/doc/essays/history/
 
-Rust Foundation. (n.d.). *The Rust Programming Language*. Rust-lang.org. Retrieved November 21, 2024, from https://www.rust-lang.org/
+Rust Foundation. (n.d.). *The Rust Programming Language*. Rust-lang.org. Retrieved November 30, 2023, from https://www.rust-lang.org/
 
 Spotify Engineering. (2013, April 22). *How we use Python at Spotify*. Spotify Engineering. https://engineering.atspotify.com/2013/04/how-we-use-python-at-spotify/
 
