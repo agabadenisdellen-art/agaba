@@ -63,18 +63,29 @@ Here is a possible layout for the memory circuit on a stripped Vero board. The l
 *   `D1-D3`: Diodes/LEDs
 *   `Q1-Q2`: Transistors
 
-## Explanation of the Memory Circuit
+## Explanation of the Oscillator (Blinking LED) Circuit
 
-The memory circuit is a bistable multivibrator, also known as a flip-flop. It is a circuit that has two stable states and can be used to store one bit of information. The circuit consists of two cross-coupled transistors, Q1 and Q2.
+The circuit shown is an **astable multivibrator**, which means it has no stable state and continuously oscillates. This oscillation is what causes the two LEDs (D1 and D2) to blink on and off alternately. It is not a memory circuit (a bistable multivibrator), which would have two stable states.
 
 ### How the Voltage Moves
 
-1.  **Power On:** When the circuit is first powered on, one of the transistors will inevitably turn on slightly faster than the other due to small variations in the components. Let's assume that Q1 turns on first.
+1.  **Power On & Initial State:** When the circuit is first powered with 10V DC from the power supply section, tiny manufacturing differences in the components mean one of the two identical transistors (Q1 and Q2) will turn on slightly faster than the other. Let's assume Q1 turns on first.
 
-2.  **Q1 Turns On:** As Q1 turns on, its collector voltage drops. This drop in voltage is coupled through capacitor C1 to the base of Q2, which causes Q2 to turn off.
+2.  **Q1 Turns ON, Q2 Turns OFF:**
+    *   As Q1 turns on, current flows through resistor R1 and LED D1, causing **D1 to light up**.
+    *   The voltage at the collector of Q1 drops to nearly 0V. This sharp drop in voltage is transferred through capacitor C1 to the base of transistor Q2. This negative-going voltage pulse forces Q2 to turn **OFF**.
+    *   Since Q2 is off, no current can flow through R2 and D2, so **D2 remains off**.
 
-3.  **Q2 Turns Off:** As Q2 turns off, its collector voltage rises. This rise in voltage is coupled through capacitor C2 to the base of Q1, which causes Q1 to turn on even harder.
+3.  **Capacitor Charging & The Switch:**
+    *   While Q2 is off, its collector voltage is high (close to 10V). Capacitor C2 begins to charge up through resistor R4. The current flowing through R4 to charge C2 also flows into the base of Q1, keeping it firmly turned on.
+    *   At the same time, capacitor C1, which is holding Q2 off, starts to charge through resistor R3 from the 10V supply line. As C1 charges, the voltage at the base of Q2 slowly rises from a negative value.
+    *   Once the voltage at the base of Q2 reaches about 0.7V (the turn-on voltage for a transistor), Q2 suddenly switches **ON**.
 
-4.  **Stable State:** This process continues until Q1 is fully on (saturated) and Q2 is fully off. This is a stable state, and the circuit will remain in this state until it is disturbed. In this state, LED D1 will be off and LED D2 will be on.
+4.  **The Flip:** The circuit now flips its state.
+    *   As Q2 turns on, current flows through R2 and **D2 lights up**.
+    *   The voltage at the collector of Q2 drops to near 0V. This voltage drop is passed through capacitor C2 to the base of Q1, forcing **Q1 to turn OFF**.
+    *   Since Q1 is now off, **D1 turns off**.
 
-5.  **Changing State:** The state of the circuit can be changed by applying a trigger pulse to the base of the "off" transistor. For example, if we apply a positive pulse to the base of Q2, it will start to turn on. This will cause Q1 to turn off, and the circuit will flip into the opposite stable state, with Q2 on and Q1 off. In this state, LED D1 will be on and LED D2 will be off.
+5.  **Cycle Repeats:** The circuit is now in the opposite state (Q1 is off, Q2 is on). The process repeats in reverse: C1 charges through R3, C2 charges through R4, and eventually, the voltage at the base of Q1 will rise enough to turn it on again, forcing Q2 off.
+
+This cycle of flipping between states continues indefinitely, causing the voltage to shift back and forth between the two transistors and making the LEDs blink on and off alternately. The speed of the blinking is determined by the values of the resistors (R3, R4) and capacitors (C1, C2).
